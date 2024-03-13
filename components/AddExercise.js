@@ -21,7 +21,6 @@ const AddExercise = () => {
       alert('Fill in all fields!');
       return;
     }
-
     const exercise = {
       sportType,
       distance: parseFloat(distance), 

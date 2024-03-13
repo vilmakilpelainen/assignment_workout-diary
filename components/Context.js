@@ -31,7 +31,7 @@ export const ExerciseProvider = ({ children }) => {
     }
   };
 
-  const clearExerciseHistory = async () => {
+  const clearExerciseList = async () => {
     try {
       setExercises([]);
       await AsyncStorage.removeItem('exercises');
@@ -45,7 +45,7 @@ export const ExerciseProvider = ({ children }) => {
     <Context.Provider value={{ 
       exercises, 
       addExercise, 
-      clearExerciseHistory, 
+      clearExerciseList, 
     }}>
       {children}
     </Context.Provider>

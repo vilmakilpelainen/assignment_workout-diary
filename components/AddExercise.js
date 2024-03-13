@@ -8,7 +8,7 @@ import style from '../style/style';
 
 const AddExercise = () => {
   const navigation = useNavigation();
-  const {addExercise, unit } = useExerciseContext();
+  const {addExercise} = useExerciseContext();
   const [sportType, setSportType] = useState('');
   const [distance, setDistance] = useState('');
   const [duration, setDuration] = useState('');
@@ -57,27 +57,9 @@ const AddExercise = () => {
           value={sportType}
           onValueChange={setSportType}
           buttons={[
-            {
-              value: 'Running',
-              label: 'Run',
-              icon: 'run',
-              showSelectedCheck: ' ',
-              style: {borderRadius: 9, backgroundColor: '#FF9C38'}
-            },
-            {
-              value: 'Walking',
-              label: 'Walk',
-              icon: 'walk',
-              showSelectedCheck: ' ',
-              style: {borderRadius: 0, backgroundColor: '#FF9C38'}
-            },
-            {
-              value: 'Swimming',
-              label: 'Swim',
-              icon: 'swim',
-              showSelectedCheck: ' ',
-              style: {borderRadius: 9, backgroundColor: '#FF9C38'}
-            },
+            { value: 'Running', label: 'Run', icon: 'run', showSelectedCheck: ' ', style: {borderRadius: 9, backgroundColor: '#FF9C38'}},
+            { value: 'Walking', label: 'Walk', icon: 'walk', showSelectedCheck: ' ', style: {borderRadius: 0, backgroundColor: '#FF9C38'}},
+            { value: 'Swimming', label: 'Swim', icon: 'swim', showSelectedCheck: ' ', style: {borderRadius: 9, backgroundColor: '#FF9C38'}},
           ]}
         />
         <TextInput
@@ -113,7 +95,7 @@ const AddExercise = () => {
             />
           </View>
         </Modal>
-        <PaperButton style={style.button} mode="contained-tonal" onPress={handleAddExercise}> ADD WORKOUT</PaperButton>
+        <PaperButton style={style.button} mode="contained" onPress={handleAddExercise}> ADD WORKOUT</PaperButton>
       </View>
     </TouchableWithoutFeedback>
   );

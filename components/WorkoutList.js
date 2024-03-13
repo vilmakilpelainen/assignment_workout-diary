@@ -4,15 +4,13 @@ import { useExerciseContext } from './Context';
 import style from '../style/style';
 
 const WorkoutList = () => {
-
   const { exercises, clearExerciseList, unit } = useExerciseContext();
 
-  const sportTypeDistances = exercises.reduce((totals, exercise) => {
-    if (!totals[exercise.sportType]) {
-      totals[exercise.sportType] = 0;
-    }
-    totals[exercise.sportType] += exercise.distance;
-    return totals;
+  const calculateDistances = exercises.reduce((acc, curr) => {
+    const { sportType, distance } = curr;
+    acc[sportType] = acc[sportType] || 0;
+    acc[sportType] += distance;
+    return acc;
   }, {});
 
   const renderExerciseItem = ({ item }) => (
@@ -29,10 +27,10 @@ const WorkoutList = () => {
       'Clear all workouts', 'Are you sure you want to clear all your workouts?',
       [
         {
-          text: 'Cancel', style: 'cancel',
+          text: 'No', style: 'cancel',
         },
         {
-          text: 'OK', onPress: () => clearExerciseList(),
+          text: 'Yes', onPress: () => clearExerciseList(),
         },
       ],
       { cancelable: false }
@@ -44,7 +42,7 @@ const WorkoutList = () => {
       {exercises.length > 0 ? (
         <>
         <View style={style.box}>
-          {Object.entries(sportTypeDistances).map(([sportType, distance]) => (
+          {Object.entries(calculateDistances).map(([sportType, distance]) => (
             <View key={sportType} style={style.sumbox}>
               <Text > {sportType}: {distance.toFixed(2)}km</Text>
             </View>
@@ -59,7 +57,7 @@ const WorkoutList = () => {
         
         </>
       ) : (
-        <Text style={style.text}>No saved workouts</Text>
+        <Text style={style.text}>No logged workouts.</Text>
       )}
     </View>
   );

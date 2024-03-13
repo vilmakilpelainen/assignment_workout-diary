@@ -35,9 +35,10 @@ export const ExerciseProvider = ({ children }) => {
   const clearExerciseList = async () => {
     try {
       setExercises([]);
-      await AsyncStorage.removeItem('exercises');
+      await 
+      AsyncStorage.removeItem('exercises');
     } catch (error) {
-      console.error('Error clearing workout history:', error);
+      console.error('Error clearing workout list:', error);
     }
   };
 

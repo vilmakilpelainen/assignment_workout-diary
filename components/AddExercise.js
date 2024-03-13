@@ -32,10 +32,6 @@ const AddExercise = () => {
     navigation.navigate('Workout List'); 
   };
 
-  const showDatePicker = () => {
-    setDateVisible(true);
-  };
-
   const handleDateChange = (event, Date) => {
     if (date === undefined) {
       setDateVisible(false);
@@ -43,6 +39,10 @@ const AddExercise = () => {
       setDate(date || new Date());
       setDateVisible(false); 
     }
+  };
+
+  const showDatePicker = () => {
+    setDateVisible(true);
   };
 
   const dismissKeyboard = () => {

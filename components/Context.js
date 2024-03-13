@@ -25,7 +25,8 @@ export const ExerciseProvider = ({ children }) => {
     try {
       const updatedExercises = [...exercises, exercise];
       setExercises(updatedExercises);
-      await AsyncStorage.setItem('exercises', JSON.stringify(updatedExercises));
+      await 
+      AsyncStorage.setItem('exercises', JSON.stringify(updatedExercises));
     } catch (error) {
       console.error('Error adding exercise:', error);
     }
@@ -40,7 +41,6 @@ export const ExerciseProvider = ({ children }) => {
     }
   };
 
-  
   return (
     <Context.Provider value={{ 
       exercises, 

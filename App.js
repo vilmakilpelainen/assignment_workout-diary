@@ -28,16 +28,13 @@ const Screens = () => {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           let iconName;
-          if (route.name === 'Add Workout') {
-            iconName ='add' ;
-          } else if (route.name === 'Workout List') {
-            iconName = 'view-list';
+          if (route.name === 'Add Workout') { iconName ='add' ;
+          } else if (route.name === 'Workout List') { iconName = 'view-list';
           }
-
           return <MaterialIcons name={iconName} size={size} color={color} />;
         },
-      })}
-    >
+      })}>
+        
       <Tab.Screen name="Add Workout" component={AddExercise} />
       <Tab.Screen name="Workout List" component={WorkoutList} />
     </Tab.Navigator>

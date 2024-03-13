@@ -5,7 +5,7 @@ import style from '../style/style';
 
 const WorkoutList = () => {
 
-  const { exercises, clearExerciseHistory, unit } = useExerciseContext();
+  const { exercises, clearExerciseList, unit } = useExerciseContext();
 
   const sportTypeDistances = exercises.reduce((totals, exercise) => {
     if (!totals[exercise.sportType]) {
@@ -24,7 +24,7 @@ const WorkoutList = () => {
     </View>
   );
 
-  const handleClearExerciseHistory = () => {
+  const handleClearExerciseList = () => {
     Alert.alert(
       'Clear all workouts', 'Are you sure you want to clear all your workouts?',
       [
@@ -32,7 +32,7 @@ const WorkoutList = () => {
           text: 'Cancel', style: 'cancel',
         },
         {
-          text: 'OK', onPress: () => clearExerciseHistory(),
+          text: 'OK', onPress: () => clearExerciseList(),
         },
       ],
       { cancelable: false }
@@ -55,7 +55,7 @@ const WorkoutList = () => {
             renderItem={renderExerciseItem}
             keyExtractor={(item, index) => index.toString()}
           />
-          <Button title="Clear all" onPress={handleClearExerciseHistory} />
+          <Button title="Clear all" onPress={handleClearExerciseList} />
         
         </>
       ) : (

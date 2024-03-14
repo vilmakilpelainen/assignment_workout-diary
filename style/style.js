@@ -47,21 +47,15 @@ listText: {
     fontStyle: 'normal',
     fontWeight: 'bold'
 },
-sumbox: {
-    borderWidth: 1,
-    borderRadius: 6,
-    margin: 6,
-    marginHorizontal: 80, 
-    padding: 10,
-    alignItems: 'center',
-    backgroundColor: '#FF9C38',
-    
-},
+
 box: {
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 10,
+    display: 'flex',
+    flexDirection: 'row', 
+    justifyContent: 'space-around', 
+    alignItems: 'center', 
+    borderWidth: 1,
+    backgroundColor: '#FF9C38',
+    padding: 3
 },
 button: {
     backgroundColor: '#FF9C38',

@@ -49,6 +49,8 @@ const AddExercise = () => {
     Keyboard.dismiss();
   };
 
+  
+
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
       <View style={style.container}>

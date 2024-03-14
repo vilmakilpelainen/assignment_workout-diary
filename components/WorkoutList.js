@@ -43,7 +43,7 @@ const WorkoutList = () => {
         <>
         <View style={style.box}>
           {Object.entries(calculateDistances).map(([sportType, distance]) => (
-            <View key={sportType} style={style.sumbox}>
+            <View key={sportType}>
               <Text > {sportType}: {distance.toFixed(2)}km</Text>
             </View>
           ))}
